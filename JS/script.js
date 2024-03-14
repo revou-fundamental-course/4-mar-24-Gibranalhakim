@@ -14,6 +14,9 @@ document.getElementById('calculate-button').addEventListener('click', function()
     var interpretation = interpretBMI(bmi);
     document.querySelector('#result').innerHTML = bmi.toFixed(2);
     document.querySelector('#result-category').innerHTML = `Kategori BMI: ${interpretation}`;
+
+    var explanation = getExplanation(interpretation);
+    document.querySelector('#explanation-text').innerHTML = explanation;
 });
 
 function calculateBMI(weight, height) {
@@ -31,7 +34,7 @@ function interpretBMI(bmi) {
     } else {
         return "Kegemukan (Obesitas)";
     }
-}
+} 
 
 function getExplanation(interpretation) {
     switch(interpretation) {
